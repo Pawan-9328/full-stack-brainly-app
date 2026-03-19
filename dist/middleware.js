@@ -12,7 +12,7 @@ export const userMiddleware = (req, res, next) => {
     }
     try {
         const decoded = jwt.verify(token, JWT_PASSWORD);
-        req.userId = decoded.id;
+        req.userId = decoded.id; // ✅ now works (after global typing)
         next();
     }
     catch (error) {
